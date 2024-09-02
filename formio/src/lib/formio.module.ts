@@ -23,18 +23,43 @@
  */
 
 import { NgModule } from '@angular/core';
-import { AcaFolderRulesModule } from '@alfresco/aca-content/folder-rules';
-import { AosExtensionModule } from '@alfresco/aca-content/ms-office';
-import { AcaAboutModule, DEV_MODE_TOKEN, PACKAGE_JSON } from '@alfresco/aca-content/about';
-import { environment } from '../environments/environment';
-import packageJson from 'package.json';
-import { FormioModule } from 'formio';
+import { CommonModule } from '@angular/common';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { ExtensionService, provideExtensionConfig } from '@alfresco/adf-extensions';
+// import { CoreModule,  TRANSLATION_PROVIDER  } from '@alfresco/adf-core';
+import { CoreModule } from '@alfresco/adf-core';
+
+import { FirstComponent } from './first/first.component';
+// import { MyExtensionService } from './my-extension.service';
+
+export function components() {
+  return [FirstComponent];
+}
 
 @NgModule({
-  imports: [AosExtensionModule, AcaAboutModule, AcaFolderRulesModule, FormioModule],
+  imports: [CommonModule, CoreModule, BrowserModule, FormsModule, FirstComponent],
   providers: [
-    { provide: PACKAGE_JSON, useValue: packageJson },
-    { provide: DEV_MODE_TOKEN, useValue: !environment.production }
-  ]
+    /* {
+        provide: TRANSLATION_PROVIDER,
+        multi: true,
+        useValue: {
+            name: 'adf-my-extension',
+            source: 'assets/adf-my-extension',
+        },
+    }, */
+    // MyExtensionService,
+    provideExtensionConfig(['formio-extension.json'])
+  ],
+  // declarations: components(),
+  exports: components()
 })
-export class AppExtensionsModule {}
+export class FormioModule {
+  constructor(extensions: ExtensionService) {
+    extensions.setComponents({
+      'formio-extension.main.component': FirstComponent
+    });
+  }
+}

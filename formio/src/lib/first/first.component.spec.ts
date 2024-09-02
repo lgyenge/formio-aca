@@ -22,19 +22,24 @@
  * from Hyland Software. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { NgModule } from '@angular/core';
-import { AcaFolderRulesModule } from '@alfresco/aca-content/folder-rules';
-import { AosExtensionModule } from '@alfresco/aca-content/ms-office';
-import { AcaAboutModule, DEV_MODE_TOKEN, PACKAGE_JSON } from '@alfresco/aca-content/about';
-import { environment } from '../environments/environment';
-import packageJson from 'package.json';
-import { FormioModule } from 'formio';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FirstComponent } from './first.component';
 
-@NgModule({
-  imports: [AosExtensionModule, AcaAboutModule, AcaFolderRulesModule, FormioModule],
-  providers: [
-    { provide: PACKAGE_JSON, useValue: packageJson },
-    { provide: DEV_MODE_TOKEN, useValue: !environment.production }
-  ]
-})
-export class AppExtensionsModule {}
+describe('FirstComponent', () => {
+  let component: FirstComponent;
+  let fixture: ComponentFixture<FirstComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [FirstComponent]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(FirstComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

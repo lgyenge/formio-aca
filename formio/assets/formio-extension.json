@@ -1,0 +1,33 @@
+{
+  "$schema": "../../extension.schema.json",
+  "$id": "formio-extension",
+  "$version": "1.0.0",
+  "$vendor": "Dinet Kft",
+  "$name": "plugin1",
+  "$description": "demo plugin",
+  "$license": "MIT",
+
+  "routes": [
+  {
+    "id": "formio.extension.route",
+    "path": "ext/formio/route",
+    "component": "formio-extension.main.component"
+  }
+],
+
+  "features": {
+    "navbar": [
+      {
+        "id": "formio.extension.nav",
+        "items": [
+          {
+            "id": "formio.extension.main",
+            "icon": "extension",
+            "title": "Formio Extension",
+            "route": "formio.extension.route"
+        }
+      ]
+    }
+  ]
+  }
+}

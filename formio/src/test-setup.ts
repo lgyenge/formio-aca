@@ -22,19 +22,11 @@
  * from Hyland Software. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { NgModule } from '@angular/core';
-import { AcaFolderRulesModule } from '@alfresco/aca-content/folder-rules';
-import { AosExtensionModule } from '@alfresco/aca-content/ms-office';
-import { AcaAboutModule, DEV_MODE_TOKEN, PACKAGE_JSON } from '@alfresco/aca-content/about';
-import { environment } from '../environments/environment';
-import packageJson from 'package.json';
-import { FormioModule } from 'formio';
-
-@NgModule({
-  imports: [AosExtensionModule, AcaAboutModule, AcaFolderRulesModule, FormioModule],
-  providers: [
-    { provide: PACKAGE_JSON, useValue: packageJson },
-    { provide: DEV_MODE_TOKEN, useValue: !environment.production }
-  ]
-})
-export class AppExtensionsModule {}
+// @ts-expect-error https://thymikee.github.io/jest-preset-angular/docs/getting-started/test-environment
+globalThis.ngJest = {
+  testEnvironmentOptions: {
+    errorOnUnknownElements: true,
+    errorOnUnknownProperties: true
+  }
+};
+import 'jest-preset-angular/setup-jest';

@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": ["projects/**/*", "formio/**/*", "jest.config.ts"],
   "plugins": ["@nx"],
   "overrides": [
     {

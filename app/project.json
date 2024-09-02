@@ -83,7 +83,12 @@
             "glob": "**/*",
             "input": "projects/aca-content/assets",
             "output": "./assets"
-          }
+          },
+          {
+            "glob": "formio-extension.json",
+            "input": "formio/assets",
+            "output": "./assets/plugins"
+          },
         ],
         "styles": [
           "node_modules/cropperjs/dist/cropper.min.css",

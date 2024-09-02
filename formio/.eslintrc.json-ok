@@ -1,0 +1,14 @@
+{
+  "extends": "../.eslintrc.json",
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["formio/tsconfig.json","formio/tsconfig.spec.json"],
+        "createDefaultProgram": true
+      },
+      "rules": {}
+    }
+  ]
+}

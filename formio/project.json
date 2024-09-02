@@ -1,0 +1,47 @@
+{
+  "name": "formio",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "formio/src",
+  "prefix": "lib",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "formio/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "formio/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "formio/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "formio/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["formio/**/*.ts", "formio/**/*.html", "formio/package.json"]
+      }
+    }
+  }
+}

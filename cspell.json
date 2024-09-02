@@ -7,7 +7,6 @@
     "package.json"
   ],
   "words": [
-    "Hyland",
     "ADDFEATURES",
     "afts",
     "androidamw",
@@ -19,7 +18,9 @@
     "filelink",
     "folderlink",
     "formcontrolname",
+    "formio",
     "hruser",
+    "Hyland",
     "iosamw",
     "mobileapps",
     "mysites",
@@ -31,14 +32,14 @@
     "qshare",
     "repo",
     "reportportal",
+    "sfdc",
     "sharedlinks",
     "sidenav",
     "simpletask",
     "succes",
     "textitem",
     "thumbnailed",
-    "versionable",
-    "sfdc"
+    "versionable"
   ],
   "dictionaries": [
     "html",

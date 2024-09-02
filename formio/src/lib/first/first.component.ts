@@ -22,19 +22,16 @@
  * from Hyland Software. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { NgModule } from '@angular/core';
-import { AcaFolderRulesModule } from '@alfresco/aca-content/folder-rules';
-import { AosExtensionModule } from '@alfresco/aca-content/ms-office';
-import { AcaAboutModule, DEV_MODE_TOKEN, PACKAGE_JSON } from '@alfresco/aca-content/about';
-import { environment } from '../environments/environment';
-import packageJson from 'package.json';
-import { FormioModule } from 'formio';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-@NgModule({
-  imports: [AosExtensionModule, AcaAboutModule, AcaFolderRulesModule, FormioModule],
-  providers: [
-    { provide: PACKAGE_JSON, useValue: packageJson },
-    { provide: DEV_MODE_TOKEN, useValue: !environment.production }
-  ]
+// eslint-disable-next-line @alfresco/eslint-angular/use-none-component-view-encapsulation
+@Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'lib-first',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './first.component.html',
+  styleUrls: ['./first.component.css']
 })
-export class AppExtensionsModule {}
+export class FirstComponent {}
