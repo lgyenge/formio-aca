@@ -12,7 +12,7 @@
         "main": "app/src/main.ts",
         "tsConfig": "app/tsconfig.app.json",
         "polyfills": "app/src/polyfills.ts",
-        "allowedCommonJsDependencies": ["minimatch", "cropperjs"],
+        "allowedCommonJsDependencies": ["minimatch", "cropperjs","formiojs","formiojs/utils/Evaluator","formiojs/utils/utils","lodash"],
         "stylePreprocessorOptions": {
           "includePaths": ["projects/aca-content/src/lib/ui", "node_modules", "node_modules/@alfresco/adf-core/lib"]
         },
@@ -94,7 +94,9 @@
           "node_modules/cropperjs/dist/cropper.min.css",
           "node_modules/pdfjs-dist/web/pdf_viewer.css",
           "projects/aca-content/src/lib/ui/application.scss",
-          "app/src/styles.scss"
+          "app/src/styles.scss",
+          "node_modules/bootstrap/scss/bootstrap.scss",
+          "node_modules/font-awesome/css/font-awesome.css"
         ],
         "scripts": ["node_modules/pdfjs-dist/build/pdf.js", "node_modules/pdfjs-dist/web/pdf_viewer.js"],
         "vendorChunk": true,

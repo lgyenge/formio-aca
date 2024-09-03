@@ -33,6 +33,7 @@ import { ExtensionService, provideExtensionConfig } from '@alfresco/adf-extensio
 import { CoreModule } from '@alfresco/adf-core';
 
 import { FirstComponent } from './first/first.component';
+import { FormioModule } from '@formio/angular';
 // import { MyExtensionService } from './my-extension.service';
 
 export function components() {
@@ -40,7 +41,7 @@ export function components() {
 }
 
 @NgModule({
-  imports: [CommonModule, CoreModule, BrowserModule, FormsModule, FirstComponent],
+  imports: [CommonModule, CoreModule, BrowserModule, FormsModule, FormioModule, FirstComponent],
   providers: [
     /* {
         provide: TRANSLATION_PROVIDER,
@@ -56,7 +57,7 @@ export function components() {
   // declarations: components(),
   exports: components()
 })
-export class FormioModule {
+export class FormioAcaModule {
   constructor(extensions: ExtensionService) {
     extensions.setComponents({
       'formio-extension.main.component': FirstComponent

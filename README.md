@@ -1,5 +1,7 @@
 # Alfresco Content Application
 
+Formio added to ACA
+
 Please refer to the public [documentation](https://alfresco-content-app.netlify.app/) for more details
 
 ## Requirements
@@ -62,4 +64,3 @@ nx test <project> -- --watch
 ```
 
 Upon changing unit tests code, you can track the coverage results either in the console output, or by reloading the HTML report in the browser.
-

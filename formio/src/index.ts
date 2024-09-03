@@ -22,6 +22,6 @@
  * from Hyland Software. If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from './lib/formio.module';
+export * from './lib/formio-aca.module';
 
 export * from './lib/first/first.component';

@@ -24,13 +24,14 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormioModule } from '@formio/angular';
 
 // eslint-disable-next-line @alfresco/eslint-angular/use-none-component-view-encapsulation
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'lib-first',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormioModule],
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.css']
 })
